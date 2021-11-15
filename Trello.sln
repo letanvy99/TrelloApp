@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trello.API", "Trello.API\Trello.API.csproj", "{448DDFE0-D3DD-4946-8589-E7757175D55D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trello.Domain", "Trello.Domain\Trello.Domain.csproj", "{506C5165-E364-41F2-A32E-A2F29C8ABABE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trello.Infrastructure", "Trello.Infrastructure\Trello.Infrastructure.csproj", "{0B4829B7-C7D7-4120-98A7-A2411EA9246A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trello.Service", "Trello.Service\Trello.Service.csproj", "{4F4FF005-AB61-4BCE-9D0B-03C58BCC4997}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{448DDFE0-D3DD-4946-8589-E7757175D55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{448DDFE0-D3DD-4946-8589-E7757175D55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{448DDFE0-D3DD-4946-8589-E7757175D55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{448DDFE0-D3DD-4946-8589-E7757175D55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{506C5165-E364-41F2-A32E-A2F29C8ABABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{506C5165-E364-41F2-A32E-A2F29C8ABABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{506C5165-E364-41F2-A32E-A2F29C8ABABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{506C5165-E364-41F2-A32E-A2F29C8ABABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4829B7-C7D7-4120-98A7-A2411EA9246A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4829B7-C7D7-4120-98A7-A2411EA9246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4829B7-C7D7-4120-98A7-A2411EA9246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4829B7-C7D7-4120-98A7-A2411EA9246A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F4FF005-AB61-4BCE-9D0B-03C58BCC4997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4FF005-AB61-4BCE-9D0B-03C58BCC4997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4FF005-AB61-4BCE-9D0B-03C58BCC4997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4FF005-AB61-4BCE-9D0B-03C58BCC4997}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56D04B55-FF60-4264-8AC8-2FAD53008B6F}
+	EndGlobalSection
+EndGlobal
