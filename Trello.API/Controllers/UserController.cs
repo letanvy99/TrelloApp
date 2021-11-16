@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using Trello.Domain.Entities;
-using Trello.Service.Models.Request;
+using Trello.Service.Models.Users.Request;
 using Trello.Service.Services.Interfaces;
 
 namespace Trello.API.Controllers
@@ -15,19 +15,14 @@ namespace Trello.API.Controllers
             _userService = userService;
         }
         [HttpPost]
-        public async Task<ActionResult> AddUser(UserCreateRequest request)
+        public async Task<ActionResult> CreateUser(UserCreateRequest request)
         {
-            var user = new User()
+            if (ModelState.IsValid)
             {
-                Email = request.Email,
-                Birthday = DateTime.Parse(request.Birthday),
-                UserName = request.UserName,
-                LastName = request.LastName,
-                FirstName = request.FirstName
-            };
-            await _userService.CreateUser(user);
-
-            return Ok();
+                await _userService.CreateUser(request);
+                return Ok();
+            }
+            return BadRequest(ModelState);
         }
     }
 }

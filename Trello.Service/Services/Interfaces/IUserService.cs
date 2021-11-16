@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Trello.Domain.Entities;
+using Trello.Service.Models.Users.Request;
+using Trello.Service.Models.Users.Response;
 
 namespace Trello.Service.Services.Interfaces
 {
     public interface IUserService
     {
-        Task<bool> CreateUser(User user);
+        Task<bool> CreateUser(UserCreateRequest user);
         Task<bool> IsExistedUser(string username);
+        Task<UserVm> CheckUserLogin(UserLogin userLogin);
     }
 }

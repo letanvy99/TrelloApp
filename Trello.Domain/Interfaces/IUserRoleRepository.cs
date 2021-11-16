@@ -7,9 +7,7 @@ using Trello.Domain.Entities;
 
 namespace Trello.Domain.Interfaces
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IUserRoleRepository : IRepository<UserRole>
     {
-        Task<bool> IsExistedUserAsync(string userName);
-        Task<User> GetUserByUserNameAsync(string userName);
     }
 }
