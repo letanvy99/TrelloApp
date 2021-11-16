@@ -93,6 +93,7 @@ namespace Trello.API
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IWorkspaceService, WorkspaceService>();
             services.AddScoped<IListService, ListService>();
+            services.AddScoped<ICardService, CardService>();
             services.AddScoped<IJwtService, JwtService>();
 
             services.AddHttpContextAccessor();

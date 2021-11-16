@@ -10,14 +10,13 @@ namespace Trello.Domain.Entities
     {
         public Label()
         {
-            Cards = new HashSet<Card>();
+            CardLabels = new HashSet<CardLabel>();
         }
-
         public int? WorkspaceId { get; set; }
         public string Name { get; set; }
         public string Color { get; set; }
 
         public virtual Workspace Workspace { get; set; }
-        public virtual ICollection<Card> Cards { get; set; }
+        public virtual ICollection<CardLabel> CardLabels { get; set; }
     }
 }

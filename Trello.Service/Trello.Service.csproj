@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Models\CardLabels\Response\" />
+    <Folder Include="Models\Cards\Response\" />
+    <Folder Include="Models\CardUsers\Response\" />
+    <Folder Include="Models\CheckLists\Response\" />
+    <Folder Include="Models\Items\Response\" />
     <Folder Include="Models\Labels\Response\" />
     <Folder Include="Models\Workspaces\Response\" />
     <Folder Include="Models\WorkspaceUsers\Response\" />

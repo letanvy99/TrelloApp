@@ -17,6 +17,8 @@ namespace Trello.Domain.Interfaces
         public ICheckListRepository CheckListRepository { get; }
         public IListRepository ListRepository { get; }
         public IItemRepository ItemRepository { get; }
+        public ICardUserRepository CardUserRepository { get; }
+        public ICardLabelRepository CardLabelRepository { get; }
         Task<int> CommitAsync();
     }
 }

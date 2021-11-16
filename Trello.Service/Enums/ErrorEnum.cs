@@ -16,6 +16,9 @@ namespace Trello.Service.Enums
         ExpiredToken,
 
         [Description("NOTFOUND_LIST")]
-        NotFoundList
+        NotFoundList,
+
+        [Description("NOTFOUND_CARD")]
+        NotFoundCard
     }
 }

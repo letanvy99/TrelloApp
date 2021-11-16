@@ -19,6 +19,7 @@ namespace Trello.Infrastructure
         }
 
         public virtual DbSet<Card> Cards { get; set; }
+        public virtual DbSet<CardLabel> CardLabels { get; set; }
         public virtual DbSet<CardUser> CardUsers { get; set; }
         public virtual DbSet<CheckList> CheckLists { get; set; }
         public virtual DbSet<Item> Items { get; set; }
@@ -34,7 +35,6 @@ namespace Trello.Infrastructure
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=.;Database=Trello;Trusted_Connection=true;MultipleActiveResultSets=true;");
             }
         }
@@ -55,16 +55,28 @@ namespace Trello.Infrastructure
 
                 entity.Property(e => e.Priority).HasMaxLength(100);
 
-                entity.HasOne(d => d.Label)
-                    .WithMany(p => p.Cards)
-                    .HasForeignKey(d => d.LabelId)
-                    .HasConstraintName("FK_Cards_Labels");
-
                 entity.HasOne(d => d.List)
                     .WithMany(p => p.Cards)
                     .HasForeignKey(d => d.ListId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Cards_Lists");
+            });
+
+            modelBuilder.Entity<CardLabel>(entity =>
+            {
+                entity.HasKey(e => new { e.CardId, e.LabelId });
+
+                entity.HasOne(d => d.Card)
+                    .WithMany(p => p.CardLabels)
+                    .HasForeignKey(d => d.CardId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CardLabels_Cards");
+
+                entity.HasOne(d => d.Label)
+                    .WithMany(p => p.CardLabels)
+                    .HasForeignKey(d => d.LabelId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CardLabels_Labels");
             });
 
             modelBuilder.Entity<CardUser>(entity =>

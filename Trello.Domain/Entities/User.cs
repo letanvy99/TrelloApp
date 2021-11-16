@@ -14,7 +14,6 @@ namespace Trello.Domain.Entities
             UserRoles = new HashSet<UserRole>();
             WorkspaceUsers = new HashSet<WorkspaceUser>();
         }
-
         public string UserName { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }

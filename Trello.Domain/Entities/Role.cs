@@ -12,7 +12,6 @@ namespace Trello.Domain.Entities
         {
             UserRoles = new HashSet<UserRole>();
         }
-
         public string Name { get; set; }
 
         public virtual ICollection<UserRole> UserRoles { get; set; }
