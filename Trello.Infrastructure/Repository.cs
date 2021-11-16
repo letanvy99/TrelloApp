@@ -66,5 +66,9 @@ namespace Trello.Infrastructure
         {
             return await DbSet.FindAsync(keyValues);
         }
+        public T Find(params object[] keyValues)
+        {
+            return DbSet.Find(keyValues);
+        }
     }
 }

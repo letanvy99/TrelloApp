@@ -37,8 +37,8 @@ namespace Trello.API.Controllers
             if (ModelState.IsValid)
             {
                 request.SetWorkspaceId(workspaceId);
-                await _listService.CreateListAsync(request);
-                return Ok();
+                var result = await _listService.CreateListAsync(request);
+                return Ok(result);
             }
             return BadRequest(ModelState);
         }

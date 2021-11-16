@@ -19,6 +19,7 @@ namespace Trello.Domain.Entities
         public string ImageUrl { get; set; }
         public string Priority { get; set; }
         public DateTime? DueDate { get; set; }
+        public int SortOrder { get; set; }
 
         public virtual List List { get; set; }
         public virtual ICollection<CardLabel> CardLabels { get; set; }

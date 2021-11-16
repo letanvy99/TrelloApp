@@ -16,7 +16,7 @@ namespace Trello.Service.Services
 
         public async Task<bool> CreateItemAsync(ItemCreateRequest request)
         {
-            var checkListEntity = await UnitOfWork.ItemRepository.FindAsync(request.GetCheckListId());
+            var checkListEntity = await UnitOfWork.CheckListRepository.FindAsync(request.GetCheckListId());
             if (checkListEntity == null) throw new BadRequestException(new ErrorDetail(ErrorEnum.NotFoundCheckList).ErrorCode.ToString());
             var itemEntity = request.ConvertToEntity();
             UnitOfWork.ItemRepository.Add(itemEntity);

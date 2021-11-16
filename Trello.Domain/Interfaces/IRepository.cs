@@ -12,6 +12,7 @@ namespace Trello.Domain.Interfaces
         void AddRange(IEnumerable<T> entity);
         void Delete(T entity);
         void Update(T entity);
+        T Find(params object[] keyValues);
         Task<T> FindAsync(params object[] keyValues);
         IQueryable<T> List(Expression<Func<T, bool>> expression);
     }

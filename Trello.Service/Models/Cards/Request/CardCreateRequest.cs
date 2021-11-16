@@ -18,6 +18,7 @@ namespace Trello.Service.Models.Cards.Request
         [Required(AllowEmptyStrings = false)]
         public string Priority { get; set; }
         public string DueDate { get; set; }
+        public int SortOrder { get; set; }
         public List<CardUserCreateRequest> Users { get; set; } = new List<CardUserCreateRequest>();
         public List<CardLabelCreateRequest> Labels { get; set; } = new List<CardLabelCreateRequest>();
 
@@ -29,7 +30,8 @@ namespace Trello.Service.Models.Cards.Request
                 Name = Name,
                 ImageUrl = ImageUrl,
                 Priority = Priority,
-                DueDate = DateTime.Parse(DueDate)
+                DueDate = DateTime.Parse(DueDate),
+                SortOrder = SortOrder
             };
         }
     }
