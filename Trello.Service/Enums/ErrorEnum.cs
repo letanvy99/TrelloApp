@@ -19,6 +19,9 @@ namespace Trello.Service.Enums
         NotFoundList,
 
         [Description("NOTFOUND_CARD")]
-        NotFoundCard
+        NotFoundCard,
+
+        [Description("NOTFOUND_CHECK_LIST")]
+        NotFoundCheckList
     }
 }

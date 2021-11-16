@@ -15,6 +15,7 @@ namespace Trello.Domain.Entities
 
         public int? CardId { get; set; }
         public string Name { get; set; }
+        public int SortOrder { get; set; }
 
         public virtual Card Card { get; set; }
         public virtual ICollection<Item> Items { get; set; }
