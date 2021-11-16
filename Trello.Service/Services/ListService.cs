@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using Trello.Domain.Entities;
 using Trello.Domain.Interfaces;
@@ -38,12 +37,12 @@ namespace Trello.Service.Services
         }
         private Expression<Func<List, bool>> GetFilter(int workspaceId)
         {
-            return u => u.WorkspaceId == workspaceId && u.IsDeleted==false;
+            return u => u.WorkspaceId == workspaceId && u.IsDeleted == false;
         }
         public async Task DeleteListAsync(int listId)
         {
             var listEntity = await UnitOfWork.ListRepository.FindAsync(listId);
-            if(listEntity == null) throw new BadRequestException(new ErrorDetail(ErrorEnum.NotFoundList).ErrorCode.ToString());
+            if (listEntity == null) throw new BadRequestException(new ErrorDetail(ErrorEnum.NotFoundList).ErrorCode.ToString());
             UnitOfWork.ListRepository.Delete(listEntity);
             await UnitOfWork.CommitAsync();
         }

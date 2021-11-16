@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Trello.Domain.Interfaces;
+﻿using Trello.Domain.Interfaces;
 using Trello.Service.Services.Interfaces;
 
 namespace Trello.Service.Services

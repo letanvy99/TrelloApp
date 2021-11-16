@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Trello.Domain.Entities;
+﻿using Trello.Domain.Entities;
 
 namespace Trello.Service.Models.CardUsers.Request
 {
@@ -16,7 +11,7 @@ namespace Trello.Service.Models.CardUsers.Request
             return new CardUser
             {
                 Card = card,
-                UserId= UserId
+                UserId = UserId
             };
         }
     }

@@ -11,7 +11,6 @@ namespace Trello.Domain.Entities
         public int CheckListId { get; set; }
         public string Name { get; set; }
         public bool? IsCompleted { get; set; }
-
         public virtual CheckList CheckList { get; set; }
     }
 }

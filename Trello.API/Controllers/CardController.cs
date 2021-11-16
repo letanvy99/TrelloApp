@@ -19,7 +19,7 @@ namespace Trello.API.Controllers
         {
             _checkListService = checkListService;
         }
-        [HttpPost("{cardId}/checkLists")]
+        [HttpPost("{cardId}/checklists")]
         public async Task<ActionResult> CreateCardCheckList([FromRoute] int cardId, [FromBody] CheckListCreateRequest request)
         {
             if (ModelState.IsValid)
@@ -30,7 +30,7 @@ namespace Trello.API.Controllers
             }
             return BadRequest(ModelState);
         }
-        [HttpDelete("{cardId}/checkLists/{checkListId}")]
+        [HttpDelete("{cardId}/checklists/{checkListId}")]
         public async Task<ActionResult> DeleteCardCheckList([FromRoute] int cardId, [FromRoute] int checkListId)
         {
             await _checkListService.DeleteCheckListAsync(checkListId);

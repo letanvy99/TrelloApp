@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Trello.Domain.Interfaces;
 using Trello.Service.Enums;
 using Trello.Service.Exceptions;
-using Trello.Service.Models.Cards.Request;
 using Trello.Service.Models.CheckLists.Request;
 using Trello.Service.Models.Error;
 using Trello.Service.Services.Interfaces;

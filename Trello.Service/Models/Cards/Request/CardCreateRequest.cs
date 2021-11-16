@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Trello.Domain.Entities;
 using Trello.Service.Models.CardLabels.Request;
 using Trello.Service.Models.CardUsers.Request;
-using Trello.Service.Models.CheckLists.Request;
 
 namespace Trello.Service.Models.Cards.Request
 {

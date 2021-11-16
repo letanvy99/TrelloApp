@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Trello.Domain.Entities;
 using Trello.Service.Models.Users.Request;
 using Trello.Service.Models.Users.Response;
 

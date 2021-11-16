@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Trello.Domain.Entities;
+﻿using Trello.Domain.Entities;
 
 namespace Trello.Service.Models.CheckLists.Request
 {
@@ -19,7 +14,7 @@ namespace Trello.Service.Models.CheckLists.Request
         {
             return new CheckList
             {
-                CardId=_cardId,
+                CardId = _cardId,
                 Name = Name,
                 SortOrder = SortOrder
             };

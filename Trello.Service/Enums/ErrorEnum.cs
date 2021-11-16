@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Trello.Service.Enums
 {
@@ -22,6 +17,9 @@ namespace Trello.Service.Enums
         NotFoundCard,
 
         [Description("NOTFOUND_CHECK_LIST")]
-        NotFoundCheckList
+        NotFoundCheckList,
+
+        [Description("NOTFOUND_ITEM")]
+        NotFoundItem
     }
 }

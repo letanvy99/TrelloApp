@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Trello.Domain.Entities;
+﻿using Trello.Domain.Entities;
 
 namespace Trello.Service.Models.WorkspaceUsers.Request
 {
@@ -15,7 +10,7 @@ namespace Trello.Service.Models.WorkspaceUsers.Request
         {
             return new WorkspaceUser
             {
-                UserId= UserId,
+                UserId = UserId,
                 Workspace = workspace
             };
         }

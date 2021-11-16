@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Trello.Service.Models.Lists.Request;
 using Trello.Service.Models.Lists.Response;
@@ -35,7 +32,7 @@ namespace Trello.API.Controllers
             return BadRequest(ModelState);
         }
         [HttpPost("{workspaceId}/lists")]
-        public async Task<ActionResult> CreateWorkspaceList([FromRoute] int workspaceId,[FromBody] ListCreateRequest request)
+        public async Task<ActionResult> CreateWorkspaceList([FromRoute] int workspaceId, [FromBody] ListCreateRequest request)
         {
             if (ModelState.IsValid)
             {
@@ -48,11 +45,11 @@ namespace Trello.API.Controllers
         [HttpGet("{workspaceId}/lists")]
         public async Task<ActionResult<ListVm>> GetWorkspaceList([FromRoute] int workspaceId)
         {
-                var result = await _listService.GetListAsync(workspaceId);
-                return Ok(result);
+            var result = await _listService.GetListAsync(workspaceId);
+            return Ok(result);
         }
         [HttpPut("{workspaceId}/lists/{listId}")]
-        public async Task<ActionResult> PutWorkspaceList([FromRoute] int workspaceId, [FromRoute] int listId,[FromBody] ListUpdateRequest request)
+        public async Task<ActionResult> PutWorkspaceList([FromRoute] int workspaceId, [FromRoute] int listId, [FromBody] ListUpdateRequest request)
         {
             if (ModelState.IsValid)
             {
