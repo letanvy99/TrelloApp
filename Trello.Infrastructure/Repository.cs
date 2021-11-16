@@ -33,6 +33,11 @@ namespace Trello.Infrastructure
             DbSet.Add(entity);
         }
 
+        public void AddRange(IEnumerable<T> entity)
+        {
+            DbSet.AddRange(entity);
+        }
+
         public void Delete(T entity)
         {
             if (typeof(IDeleteEntity).IsAssignableFrom(typeof(T)))

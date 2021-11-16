@@ -16,6 +16,12 @@ namespace Trello.Infrastructure
 
         private IUserRoleRepository _userRoleRepository;
 
+        private IWorkspaceRepository _workspaceRepository;
+
+        private IWorkspaceUserRepository _workspaceUserRepository;
+
+        private ILabelRepository _labelRepository;
+
         public UnitOfWork(DbFactory dbFactory)
         {
             _dbFactory = dbFactory;
@@ -29,6 +35,21 @@ namespace Trello.Infrastructure
         public IUserRoleRepository UserRoleRepository
         {
             get { return _userRoleRepository ??= new UserRoleRepository(_dbFactory); }
+        }
+
+        public IWorkspaceRepository WorkspaceRepository
+        {
+            get { return _workspaceRepository ??= new WorkspaceRepository(_dbFactory); }
+        }
+
+        public IWorkspaceUserRepository WorkspaceUserRepository
+        {
+            get { return _workspaceUserRepository ??= new WorkspaceUserRepository(_dbFactory); }
+        }
+
+        public ILabelRepository LabelRepository
+        {
+            get { return _labelRepository ??= new LabelRepository(_dbFactory); }
         }
 
         public Task<int> CommitAsync()

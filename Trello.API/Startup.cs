@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,9 +9,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Security.Claims;
 using System.Text;
 using Trello.Domain.Interfaces;
 using Trello.Infrastructure;
+using Trello.Service.Constants;
 using Trello.Service.Services;
 using Trello.Service.Services.Interfaces;
 
@@ -87,7 +90,28 @@ namespace Trello.API
             });
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWorkspaceService, WorkspaceService>();
             services.AddScoped<IJwtService, JwtService>();
+
+            services.AddHttpContextAccessor();
+            services.AddScoped<IIdentityUser, IdentityUser>((provider) =>
+            {
+                var httpContext = provider.GetRequiredService<IHttpContextAccessor>().HttpContext;
+
+                if (httpContext == null)
+                    return null;
+                var identity = httpContext.User.Identity as ClaimsIdentity;
+
+                var currentUserId = int.Parse(identity.FindFirst(CustomizeClaimType.UserId) == null ? "0" : identity.FindFirst(CustomizeClaimType.UserId).Value);
+
+                if (currentUserId == 0)
+                    return null;
+
+                return new IdentityUser()
+                {
+                    UserId = currentUserId
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

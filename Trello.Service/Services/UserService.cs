@@ -10,7 +10,7 @@ namespace Trello.Service.Services
 {
     public class UserService : BaseService, IUserService
     {
-        public UserService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public UserService(IUnitOfWork unitOfWork, IIdentityUser identityUser) : base(unitOfWork,identityUser)
         {
 
         }

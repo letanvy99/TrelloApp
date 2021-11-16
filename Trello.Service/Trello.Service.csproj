@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -10,6 +10,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Trello.Domain\Trello.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Labels\Response\" />
+    <Folder Include="Models\Workspaces\Response\" />
+    <Folder Include="Models\WorkspaceUsers\Response\" />
   </ItemGroup>
 
 </Project>
