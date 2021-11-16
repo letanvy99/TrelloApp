@@ -13,6 +13,9 @@ namespace Trello.Service.Enums
         LoginFail,
 
         [Description("EXPIRED_TOKEN")]
-        ExpiredToken
+        ExpiredToken,
+
+        [Description("NOTFOUND_LIST")]
+        NotFoundList
     }
 }

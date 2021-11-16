@@ -22,6 +22,14 @@ namespace Trello.Infrastructure
 
         private ILabelRepository _labelRepository;
 
+        private ICardRepository _cardRepository;
+
+        private ICheckListRepository _checkListRepository;
+
+        private IListRepository _listRepository;
+
+        private IItemRepository _itemRepository;
+
         public UnitOfWork(DbFactory dbFactory)
         {
             _dbFactory = dbFactory;
@@ -50,6 +58,26 @@ namespace Trello.Infrastructure
         public ILabelRepository LabelRepository
         {
             get { return _labelRepository ??= new LabelRepository(_dbFactory); }
+        }
+
+        public ICardRepository CardRepository
+        {
+            get { return _cardRepository ??= new CardRepository(_dbFactory); }
+        }
+
+        public ICheckListRepository CheckListRepository
+        {
+            get { return _checkListRepository ??= new CheckListRepository(_dbFactory); }
+        }
+
+        public IListRepository ListRepository
+        {
+            get { return _listRepository ??= new ListRepository(_dbFactory); }
+        }
+
+        public IItemRepository ItemRepository
+        {
+            get { return _itemRepository ??= new ItemRepository(_dbFactory); }
         }
 
         public Task<int> CommitAsync()

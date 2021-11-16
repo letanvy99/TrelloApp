@@ -62,5 +62,10 @@ namespace Trello.Infrastructure
             }
             DbSet.Update(entity);
         }
+
+        public virtual async Task<T> FindAsync(params object[] keyValues)
+        {
+            return await DbSet.FindAsync(keyValues);
+        }
     }
 }

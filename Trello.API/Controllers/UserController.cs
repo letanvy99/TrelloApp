@@ -7,6 +7,7 @@ using Trello.Service.Services.Interfaces;
 
 namespace Trello.API.Controllers
 {
+    [Route("users")]
     public class UserController : BaseController
     {
         private IUserService _userService;

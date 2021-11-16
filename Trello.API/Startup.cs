@@ -11,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Security.Claims;
 using System.Text;
+using Trello.API.Middlewares;
 using Trello.Domain.Interfaces;
 using Trello.Infrastructure;
 using Trello.Service.Constants;
@@ -91,6 +92,7 @@ namespace Trello.API
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IWorkspaceService, WorkspaceService>();
+            services.AddScoped<IListService, ListService>();
             services.AddScoped<IJwtService, JwtService>();
 
             services.AddHttpContextAccessor();
@@ -129,6 +131,10 @@ namespace Trello.API
             app.UseRouting();
 
             app.UseAuthentication();
+
+            app.UseAuthenticationMiddleware();
+
+            app.UseHandleExceptionMiddleware();
 
             app.UseAuthorization();
 
